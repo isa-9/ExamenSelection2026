@@ -20,4 +20,4 @@ Ensuite, exécutez la commande suivante dans le répertoire `Csgames/` pour inst
 lake update
 ```
 
-# Pour compléter le défi, référez-vous aux fichiers dans le dossier CsGames
+Pour compléter le défi, référez-vous aux fichiers dans le dossier CsGames

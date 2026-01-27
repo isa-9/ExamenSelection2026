@@ -45,8 +45,8 @@ Pour cette compétition, vous devez concevoir l'interface d'un site web pour une
 
 ## Livrables
 
-1. Lien vers le Figma dansle google form.
-1. Petit rapport explication les décissions que vous avez pris lors de la conception de votre interface.
+1. Lien vers le Figma dans le google form.
+1. Petit rapport explication les décisions que vous avez pris lors de la conception de votre interface.
 
 ---
 

@@ -12,7 +12,7 @@ Dans ce challenge, vous devez contourner une page d'authentification pour récup
 
 URL du site: `https://ctf1.natbo.ca/`
 
-## Challenge 2
+## Challenge #2
 
 Voici l'url pour le deuxième challenge: `https://ctf2.natbo.ca/`
 
