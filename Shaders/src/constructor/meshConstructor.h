@@ -7,7 +7,7 @@
 #include <memory>
 #include <sys/types.h>
 
-enum MeshType { CUBE, WAVE_PLANE, TEAPOT, MESH_COUNT };
+enum MeshType { WAVE_PLANE,CUBE, MESH_COUNT };
 
 class MeshConstructor {
 public:
@@ -26,10 +26,9 @@ private:
   static MeshConstructor* instance;
   std::unique_ptr<std::map<MeshType, uint16_t>> meshTypeToID;
   std::string *setDefaultName(MeshType meshType, Mesh *mesh);
-  std::unique_ptr<Mesh> createCubeMesh();
   std::unique_ptr<Mesh> createWavePlaneMesh(unsigned int subdivisions = 50);
-  std::unique_ptr<Mesh> createObjMesh(const std::string &name,
-                                      const std::string &filepath);
+  std::unique_ptr<Mesh> createCubeMesh();
+
 };
 
 #endif

@@ -5,6 +5,7 @@ Pour ce défi, vous devez avoir [docker](https://docs.docker.com/engine/install/
 Après avoir installé `docker`, il suffit de démarrer la base de données et l'interface web avec la commande suivante:
 
 ```bash
+mkdir data/
 docker-compose up -d
 ```
 
@@ -14,7 +15,7 @@ L'interface web Adminer est accessible à l'adresse suivante: [http://localhost:
 
 Les informations de connexion sont les suivantes:
 - Système: PostgreSQL
-- Serveur: db
+- Serveur: postgres
 - Utilisateur: root
 - Mot de passe: mypassword
 

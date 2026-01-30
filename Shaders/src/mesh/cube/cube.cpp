@@ -13,19 +13,11 @@ CubeMesh::CubeMesh() : VAO(0), VBO(0), shaderProgram(0) {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, getVertexDataSize(), getVertexData(), GL_DYNAMIC_DRAW);
 
-    // Position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    // Normal attribute
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
-
-    // Texture coordinate attribute
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-    glEnableVertexAttribArray(2);
-
-    glBindVertexArray(0);
 
     createShaderProgram();
 }
@@ -57,6 +49,10 @@ void CubeMesh::createShaderProgram() {
 }
 
 void CubeMesh::setUniforms() const {
+    // TODO: Add unfiforms to update the time using the variable timeElapsed
+
+    
+    // TODO: Add the uniform locs for the two colors and set them using topColor and bottomColor
 
 }
 
@@ -93,4 +89,7 @@ void CubeMesh::update(float deltaTime) {
 void CubeMesh::renderCustomImGui() {
     ImGui::Separator();
     ImGui::Text("Color chaning interface");
+
+    ImGui::ColorEdit3("Color 1 (Low)", topColor);
+    ImGui::ColorEdit3("Color 2 (High)", bottomColor);
 }

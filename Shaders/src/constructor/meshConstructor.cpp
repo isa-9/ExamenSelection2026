@@ -1,8 +1,6 @@
 #include "meshConstructor.h"
-#include "mesh/cube/cube.h"
-#include "mesh/mesh.h"
-#include "mesh/obj/obj.h"
 #include "mesh/wavePlane/wavePlane.h"
+#include "mesh/cube/cube.h"git 
 #include <cstdint>
 #include <utility>
 #include <stdexcept>
@@ -28,15 +26,11 @@ std::unique_ptr<Mesh> MeshConstructor::createMesh(MeshType meshType) {
 
   std::unique_ptr<Mesh> mesh;
   switch (meshType) {
-  case CUBE:
-    mesh = createCubeMesh();
-    break;
-    break;
   case WAVE_PLANE:
     mesh = createWavePlaneMesh();
     break;
-  case TEAPOT:
-    mesh = createObjMesh("teapot", "teapot.obj");
+  case CUBE:
+    mesh = createCubeMesh();
     break;
   default:
     throw std::invalid_argument("Invalid mesh type");
@@ -51,20 +45,14 @@ uint16_t MeshConstructor::getMeshCount(MeshType meshType) {
   return (*meshTypeToID)[static_cast<MeshType>(meshType)];
 }
 
-std::unique_ptr<Mesh> MeshConstructor::createCubeMesh() {
-
-  auto mesh = std::make_unique<CubeMesh>();
-  return std::move(mesh);
-}
 
 std::unique_ptr<Mesh> MeshConstructor::createWavePlaneMesh(unsigned int subdivisions) {
   auto mesh = std::make_unique<WavePlaneMesh>(subdivisions);
   return std::move(mesh);
 }
 
-std::unique_ptr<Mesh>
-MeshConstructor::createObjMesh(const std::string &name,
-                               const std::string &filepath) {
-  auto mesh = std::make_unique<ObjMesh>(name, filepath);
+std::unique_ptr<Mesh> MeshConstructor::createCubeMesh() {
+
+  auto mesh = std::make_unique<CubeMesh>();
   return std::move(mesh);
 }

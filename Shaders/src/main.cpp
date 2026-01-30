@@ -10,7 +10,6 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
-#include "mesh/obj/obj.h"
 #include "input/input.h"
 #include "scene/scene.h"
 #include <bits/stdc++.h>
@@ -131,16 +130,11 @@ std::shared_ptr<std::vector<std::unique_ptr<Scene>>> createScenes() {
 
   scenes->push_back(std::move(scene1));
 
-  auto scene2 = std::make_unique<Scene>("Phong shading Scene");
-  auto teapotMesh = std::make_unique<ObjMesh>("teapot", "teapot.obj");
-  scene2->addMesh(std::move(teapotMesh), "teapot1");
+  auto scene2 = std::make_unique<Scene>("Cube Scene");
+  auto cubeMesh = meshConstructor.createMesh(CUBE);
+  scene2->addMesh(std::move(cubeMesh), "cube");
 
   scenes->push_back(std::move(scene2));
-
-  auto scene3 = std::make_unique<Scene>("Third Scene");
-  auto cubeMesh = meshConstructor.createMesh(CUBE);
-  scene3->addMesh(std::move(cubeMesh), "cube1");
-  scenes->push_back(std::move(scene3));
 
   return scenes;
 }

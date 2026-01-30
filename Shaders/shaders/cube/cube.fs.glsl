@@ -2,20 +2,22 @@
 
 in vec3 FragPos;
 in vec3 Normal;
-in vec2 TexCoords;
 
 out vec4 FragColor;
 
-uniform float time;
-uniform sampler2D texture1;
+uniform float timeElapsed;
+uniform vec3 viewPos;
+uniform vec3 topColor;
+uniform vec3 bottomColor;
 
 void main()
 {
-    // TODO: Finish the fragment shader implementation
-    
+    // TODO: Finish the fragment shader implementation.
+    // Use the FragPos.y to mix between the topColor and bottomColor.
+    // Start with a normal vertical gradient from bottom to top.
+    // That will then change based on timeElapsed to create a color changing effect.
 
-    vec3 norm = normalize(Normal);
-    
-    vec3 finalColor = vec3(1.0, 0.0, 0.0);
-    FragColor = vec4(finalColor, 1.0);
+    vec3 color = mix(bottomColor, topColor, 1.0);
+
+    FragColor = vec4(color, 1.0);
 }
