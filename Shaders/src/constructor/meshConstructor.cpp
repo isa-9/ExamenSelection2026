@@ -1,6 +1,6 @@
 #include "meshConstructor.h"
 #include "mesh/wavePlane/wavePlane.h"
-#include "mesh/cube/cube.h"git 
+#include "mesh/cube/cube.h"
 #include <cstdint>
 #include <utility>
 #include <stdexcept>
